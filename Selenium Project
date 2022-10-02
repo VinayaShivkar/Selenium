@@ -1,0 +1,44 @@
+package SeleniumP;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class SeleniumProject {
+	 public static void main(String[] args) throws InterruptedException {
+		   
+	        System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
+	        WebDriver driver = new ChromeDriver();
+	        
+	        driver.get("file:///C:/Users/Vinaya%20Shivkar/Desktop/SeleniumProject/ConferenceRegistartion.html");
+	        driver.findElement(By.id("txtFirstName")).sendKeys("Vinaya");
+	        driver.findElement(By.id("txtLastName")).sendKeys("Shivkar");
+	        driver.findElement(By.id("txtEmail")).sendKeys("shivkarvinaya@gmail.com");
+	        driver.findElement(By.id("txtPhone")).sendKeys("7656212536");
+	        Select listpeople=new Select(driver.findElement(By.name("size")));
+	        listpeople.selectByVisibleText("3");
+	        driver.findElement(By.id("txtAddress")).sendKeys("Chinchpada");
+	        driver.findElement(By.id("txtAddress2")).sendKeys("pen");
+	        Select drpcity =new Select(driver.findElement(By.name("city")));
+	        drpcity.selectByVisibleText("Pune");
+	        Select drpstate=new Select(driver.findElement(By.name("state")));
+	        drpstate.selectByVisibleText("Karnataka");
+	         driver.findElement(By.name("conference")).click();
+	         driver.findElement(By.xpath("/html/body/form/table/tbody/tr[14]/td/a")).click();
+	       Thread.sleep(2000);
+	        
+	       driver.findElement(By.id("txtFirstName")).sendKeys("Vinaya");
+	        driver.findElement(By.id("txtLastName")).sendKeys("Shivkar");
+	       driver.findElement(By.id("txtDebit")).sendKeys("78945623541");
+	        driver.findElement(By.id("txtCvv")).sendKeys("250");
+	       driver.findElement(By.id("txtMonth")).sendKeys("March");
+	        driver.findElement(By.id("txtYear")).sendKeys("2022");
+	       driver.findElement(By.xpath("/html/body/form/table/tbody/tr[7]/td/a")).click();
+	        
+	        
+	        
+
+}
+}
